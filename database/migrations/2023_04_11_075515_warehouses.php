@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('warehouse_name');
             $table->integer('daily_order_limit');
             $table->integer('priority')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

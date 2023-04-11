@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function(){
+    return jsonResponse(TRUE,  'Welcome Our Warehouse App !!'.$_SERVER['REQUEST_URI']);
 });
