@@ -19,7 +19,7 @@ class Orders extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function products(): HasMany
+    public function products()
     {
         return $this->hasMany('App\Models\OrderProducts', 'order_id');
     }

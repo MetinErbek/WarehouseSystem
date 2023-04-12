@@ -11,14 +11,15 @@ class OrderProducts extends Model
     protected $table = 'order_products';
     protected $fillable = [
         'product_id',
-        'order_id'
+        'order_id',
+        'qty'
     ];
     /**
      * Get the user that owns the OrderProducts
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function products(): BelongsTo
+    public function product()
     {
         return $this->belongsTo('App\Models\Products', 'product_id');
     }
