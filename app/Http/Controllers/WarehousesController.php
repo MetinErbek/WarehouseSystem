@@ -52,7 +52,7 @@ class WarehousesController extends Controller
     public function show(string $id)
     {
         try{
-            $WarehousesRS = Warehouses::where('id', $id);
+            $WarehousesRS = Warehouses::where('id', $id)->with('stocks.product');
             if($WarehousesRS->exists())
             {
                 $Warehouse = $WarehousesRS->first();

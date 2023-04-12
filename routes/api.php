@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\WarehousesController;
+use App\Http\Controllers\WarehouseProductsController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,6 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::resource('products', ProductsController::class);
 Route::resource('warehouses', WarehousesController::class);
+Route::post('setwarehousestock', [WarehouseProductsController::class, 'setWarehouseStock']);
 
 Route::fallback(function () {
 

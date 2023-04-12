@@ -15,4 +15,12 @@ class Warehouses extends Model
         'daily_order_limit',        
         'priority'
     ];
+    protected $hidden = [
+        'updated_at',
+        'deleted_at',
+    ];
+    public function stocks()
+    {
+        return $this->hasMany('App\Models\WarehouseProducts', 'warehouse_id');
+    }
 }
