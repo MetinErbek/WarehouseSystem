@@ -13,4 +13,13 @@ class OrderProducts extends Model
         'product_id',
         'order_id'
     ];
+    /**
+     * Get the user that owns the OrderProducts
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function products(): BelongsTo
+    {
+        return $this->belongsTo('App\Models\Products', 'product_id');
+    }
 }

@@ -13,4 +13,14 @@ class Orders extends Model
     protected $fillable = [
         'warehouse_id',
     ];
+
+    /**
+     * Get all of the comments for the Orders
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function products(): HasMany
+    {
+        return $this->hasMany('App\Models\OrderProducts', 'order_id');
+    }
 }
